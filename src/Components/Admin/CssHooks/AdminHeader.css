@@ -1,0 +1,30 @@
+.admin-header {
+  height: 82px;
+  display: flex;
+  align-items: center;
+  padding-left: 37px;
+  width: 76vw;
+  background-color: white;
+}
+.admin-title {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 26px;
+  color: #0c0c0c;
+}
+.admin-body {
+  background-color: #e5e5e5;
+  height: 100vh;
+  padding: 20px;
+}
+.add-event-form {
+  background: #ffff;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding-top: 28px;
+  padding-left: 35px;
+  padding-bottom: 38px;
+}

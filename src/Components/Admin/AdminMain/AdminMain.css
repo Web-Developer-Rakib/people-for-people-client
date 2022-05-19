@@ -1,0 +1,36 @@
+.admin-main {
+  display: flex;
+}
+.admin-left {
+  width: 305px;
+  height: auto;
+}
+.admin-logo {
+  display: flex;
+  justify-content: center;
+  height: 82px;
+  align-items: center;
+}
+
+.admin-navlinks {
+  margin-left: 40px;
+  margin-right: 10px;
+}
+.admin-navlinks > a {
+  display: block;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 30px;
+  text-decoration: none;
+  color: #111111;
+}
+.admin-navlinks > a:hover {
+  color: blueviolet;
+}
+.active {
+  background-color: gainsboro;
+  border-radius: 30px;
+  padding: 0px 10px;
+}

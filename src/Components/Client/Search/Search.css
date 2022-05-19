@@ -6,10 +6,13 @@
   line-height: 44px;
   text-transform: uppercase;
   color: #000000;
+  margin-bottom: 26px;
 }
 .search-section {
   display: flex;
   justify-content: center;
+  margin-top: 74px;
+  margin-bottom: 51px;
 }
 .search-area {
   display: flex;

@@ -1,0 +1,22 @@
+.event-card {
+  height: 320px;
+  width: 270px;
+  border-radius: 10px;
+  position: relative;
+}
+.card-img {
+  border-radius: 10px;
+}
+.card-title {
+  position: absolute;
+  z-index: 5;
+  bottom: -8px;
+  color: #ffffff;
+  background: #ffbd3e;
+  border-radius: 0px 0px 10px 10px;
+  padding: 25px 63px 31px 64px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+}
