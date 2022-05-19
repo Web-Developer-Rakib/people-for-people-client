@@ -1,4 +1,6 @@
 import { Route, Routes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import AddEvent from "./Components/Admin/AddEvent/AddEvent";
 import AdminMain from "./Components/Admin/AdminMain/AdminMain";
@@ -11,6 +13,7 @@ import Home from "./Components/Client/Home/Home";
 import Login from "./Components/Client/Login/Login";
 import NotFound from "./Components/Client/NotFound/NotFound";
 import Register from "./Components/Client/Register/Register";
+import ThankYou from "./Components/Client/ThankYou/ThankYou";
 
 function App() {
   return (
@@ -31,8 +34,10 @@ function App() {
           ></Route>
           <Route path="add-event" element={<AddEvent></AddEvent>}></Route>
         </Route>
+        <Route path="thank-you" element={<ThankYou></ThankYou>}></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
+      <ToastContainer />
     </div>
   );
 }
