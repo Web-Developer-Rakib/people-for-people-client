@@ -12,14 +12,14 @@ const Register = () => {
   const { setUserInfo } = useAuth();
   const navigate = useNavigate();
   const date = new Date();
-  const today = date.toDateString();
-  console.log(today);
+  const registerDate = date.toDateString();
   const handleRegister = (e) => {
     e.preventDefault();
     const name = e.target.name.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
     const confirmPassword = e.target.confirmPassword.value;
+    const usersData = { name, email, registerDate };
     if (password !== confirmPassword) {
       toast.warn("Password did not matched.");
     } else {
@@ -30,6 +30,20 @@ const Register = () => {
           });
           const user = userCredential.user;
           setUserInfo(user);
+          fetch("http://localhost:5000/post-users", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(usersData),
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              console.log("Success:", data);
+            })
+            .catch((error) => {
+              // console.error("Error:", error);
+            });
           navigate("/thank-you");
         })
         .catch((error) => {
@@ -59,15 +73,27 @@ const Register = () => {
       <div className="register-form-container">
         <form onSubmit={handleRegister} className="register-form">
           <h3 className="my-3">Register</h3>
-          <input type="text" name="name" placeholder="Full Name" /> <br />
-          <input type="email" name="email" placeholder="Email" />
+          <input
+            type="text"
+            name="name"
+            placeholder="Full Name"
+            required
+          />{" "}
           <br />
-          <input type="password" name="password" placeholder="Password" />{" "}
+          <input type="email" name="email" placeholder="Email" required />
+          <br />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            required
+          />{" "}
           <br />
           <input
             type="password"
             name="confirmPassword"
             placeholder="Confirm password"
+            required
           />{" "}
           <br />
           <div className="d-flex justify-content-center">
